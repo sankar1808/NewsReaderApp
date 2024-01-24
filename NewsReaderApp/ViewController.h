@@ -8,7 +8,7 @@
 #import <UIKit/UIKit.h>
 #import "News.h"
 #import "NewsCell.h"
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *newsDisplayTableView;
 @property (strong, nonatomic) IBOutlet UISearchBar *searchNews;

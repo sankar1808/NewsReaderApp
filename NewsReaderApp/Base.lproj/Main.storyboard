@@ -11,7 +11,7 @@
         <!--NewsList-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="testTableView" id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -40,7 +40,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="NewsList" id="zFV-9t-frr"/>
                     <connections>
-                        <outlet property="newsDisplayTableView" destination="3DB-ZJ-Qjf" id="k7A-s2-3YW"/>
+                        <outlet property="newsDisplayTableView" destination="3DB-ZJ-Qjf" id="qQd-u3-jQ8"/>
                         <outlet property="searchNews" destination="E4o-1T-3DQ" id="cAc-UR-LgA"/>
                     </connections>
                 </viewController>

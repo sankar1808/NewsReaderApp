@@ -8,7 +8,7 @@
 #import "ViewController.h"
 #import "News.h"
 
-@interface ViewController () <UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate>
+@interface ViewController () 
 
 
 @end
@@ -36,6 +36,7 @@
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 1;
 }
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return newsListArray.count;
@@ -43,8 +44,8 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *cellIdentifier = @"cellIdentifier";
-    NewsCell *cell = (NewsCell *)[newsDisplayTableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    NSString *reuseId = [NSString stringWithFormat:@"%ld/%ld",(long)indexPath.section,(long)indexPath.row];
+    NewsCell *cell = (NewsCell *)[newsDisplayTableView dequeueReusableCellWithIdentifier:reuseId];
         if (cell == nil)
         {
             NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"NewsCell" owner:self options:nil];
@@ -171,12 +172,12 @@
 }
 
 
+#pragma mark - Memory warning methods
 - (void)didReceiveMemoryWarning
 {
-  [super didReceiveMemoryWarning];
-  // Dispose of any resources that can be recreated.
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
     [newsListArray removeAllObjects];
     [searchNewsListArray removeAllObjects];
 }
-
 @end
